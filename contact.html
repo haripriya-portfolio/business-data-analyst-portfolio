@@ -7,14 +7,159 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <meta name="description"
-        content="Contact Hari Priya Potu - Data and Business Analyst">
+        content="Connect with Hari Priya Potu, Data and Business Analyst.">
 
   <title>Contact | Hari Priya Potu</title>
 
   <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* CONTACT PAGE ONLY */
+
+    .contact-page .page-banner {
+      padding: 52px 0 46px;
+    }
+
+    .contact-page .page-banner h1 {
+      margin-bottom: 14px;
+    }
+
+    .contact-page .contact-section {
+      background: #f0f4f8;
+      padding: 48px 0 85px;
+    }
+
+    .contact-page .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 25px;
+    }
+
+    .contact-page .contact-card {
+      background: #ffffff;
+      border: 1px solid #dce5ed;
+      border-radius: 12px;
+      padding: 38px 30px;
+      box-shadow: 0 12px 36px rgba(16, 31, 53, 0.06);
+      transition: transform 0.25s ease,
+                  box-shadow 0.25s ease,
+                  border-color 0.25s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .contact-page .contact-card:hover {
+      transform: translateY(-5px);
+      border-color: #c5a477;
+      box-shadow: 0 16px 38px rgba(16, 31, 53, 0.12);
+    }
+
+    .contact-page .contact-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 12px;
+      background: #101f35;
+      color: #e9cda2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 25px;
+    }
+
+    .contact-page .contact-icon svg {
+      width: 26px;
+      height: 26px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .contact-page .contact-card h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      color: #101f35;
+      font-size: 25px;
+      margin: 0 0 12px;
+    }
+
+    .contact-page .contact-card p {
+      color: #65778a;
+      font-size: 14px;
+      line-height: 1.8;
+      margin: 0 0 20px;
+    }
+
+    .contact-page .contact-detail {
+      font-size: 14px;
+      color: #294861;
+      font-weight: 600;
+      overflow-wrap: anywhere;
+      margin-bottom: 24px;
+    }
+
+    .contact-page .contact-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      margin-top: auto;
+      color: #9b774b;
+      font-size: 14px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .contact-page .contact-link:hover {
+      color: #101f35;
+    }
+
+    .contact-page .contact-note {
+      text-align: center;
+      margin: 45px auto 0;
+      max-width: 680px;
+      color: #65778a;
+      font-size: 15px;
+      line-height: 1.9;
+    }
+
+    .contact-page .contact-note strong {
+      color: #101f35;
+    }
+
+    @media (max-width: 900px) {
+      .contact-page .contact-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 600px) {
+      .contact-page .page-banner {
+        padding: 38px 0 32px;
+      }
+
+      .contact-page .contact-section {
+        padding: 28px 0 55px;
+      }
+
+      .contact-page .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+      }
+
+      .contact-page .contact-card {
+        padding: 30px 24px;
+      }
+
+      .contact-page .contact-note {
+        margin-top: 30px;
+      }
+    }
+  </style>
 </head>
 
-<body>
+<body class="contact-page">
 
   <!-- NAVIGATION -->
   <header class="header">
@@ -37,9 +182,7 @@
         <a href="experience.html">Experience</a>
         <a href="projects.html">Projects</a>
         <a href="education.html">Education</a>
-        <a href="contact.html" class="active nav-contact">
-          Contact
-        </a>
+        <a href="contact.html" class="nav-contact active">Contact</a>
       </div>
 
     </nav>
@@ -47,205 +190,149 @@
 
   <main>
 
-    <!-- PAGE BANNER -->
+    <!-- ONE MAIN HEADING -->
     <section class="page-banner">
       <div class="container">
 
-        <p class="section-label">LET'S CONNECT</p>
-
-        <h1>Get in <span>Touch.</span></h1>
+        <h1>
+          Let's <span>Connect.</span>
+        </h1>
 
         <p>
-          Open to conversations about data analytics,
-          business intelligence, and professional opportunities.
+          Whether you're a recruiter exploring potential
+          talent, a hiring manager looking for an analytical
+          problem-solver, or a professional interested in
+          connecting, I'd love to hear from you. I'm always
+          open to meaningful conversations, new opportunities,
+          and collaborations where data can make a difference.
         </p>
 
       </div>
     </section>
 
-    <!-- CONTACT SECTION -->
-    <section class="section contact-section">
+    <!-- CONTACT CARDS -->
+    <section class="contact-section">
       <div class="container">
 
         <div class="contact-grid">
 
-          <!-- INTRODUCTION -->
-          <div class="contact-intro">
+          <!-- EMAIL -->
+          <article class="contact-card">
 
-            <p class="section-label">
-              START A CONVERSATION
-            </p>
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <rect x="3" y="5" width="18"
+                      height="14" rx="2"></rect>
+                <path d="m3 7 9 6 9-6"></path>
+              </svg>
+            </div>
 
-            <h2 class="section-title">
-              Let's Build Something
-              <span>Meaningful.</span>
-            </h2>
+            <h2>Email</h2>
 
             <p>
-              I'm passionate about using data to solve
-              business problems, improve processes,
-              and support better decision-making.
+              Have an opportunity, question,
+              or collaboration in mind?
+              Feel free to reach out directly.
             </p>
+
+            <div class="contact-detail">
+              haripriyapotu4@gmail.com
+            </div>
+
+            <a class="contact-link"
+               href="mailto:haripriyapotu4@gmail.com">
+              Send an Email
+              <span aria-hidden="true">→</span>
+            </a>
+
+          </article>
+
+          <!-- LINKEDIN -->
+          <article class="contact-card">
+
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <rect x="3" y="3" width="18"
+                      height="18" rx="2"></rect>
+                <path d="M7.5 10v7"></path>
+                <path d="M7.5 7.5h.01"></path>
+                <path d="M12 17v-7"></path>
+                <path d="M12 13a3 3 0 0 1 6 0v4"></path>
+              </svg>
+            </div>
+
+            <h2>LinkedIn</h2>
 
             <p>
-              Whether you're a recruiter, hiring manager,
-              or fellow analytics professional,
-              I'd be happy to connect and explore opportunities.
+              Connect with me professionally
+              and explore my experience,
+              skills, and career journey.
             </p>
 
-            <div class="contact-availability">
-              <span class="availability-dot"></span>
-              Open to professional opportunities
+            <div class="contact-detail">
+              Hari Priya Potu
             </div>
 
-          </div>
+            <a class="contact-link"
+               href="https://www.linkedin.com/in/hari-p-7a3872176/"
+               target="_blank"
+               rel="noopener noreferrer">
+              View LinkedIn Profile
+              <span aria-hidden="true">→</span>
+            </a>
 
-          <!-- CONTACT CARDS -->
-          <div class="contact-cards">
+          </article>
 
-            <!-- EMAIL -->
-            <div class="contact-card">
+          <!-- GITHUB -->
+          <article class="contact-card">
 
-              <div class="contact-card-icon">
-                ✉
-              </div>
-
-              <div class="contact-card-content">
-
-                <span class="contact-card-label">
-                  EMAIL
-                </span>
-
-                <h3>Email Me</h3>
-
-                <p>
-                  Reach out for job opportunities,
-                  professional inquiries, or collaboration.
-                </p>
-
-                <a href="mailto:haripriyapotu4@gmail.com"
-                   class="contact-link">
-                  haripriyapotu4@gmail.com
-                </a>
-
-              </div>
-
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M9 18c-4 1-4-2-6-2"></path>
+                <path d="M15 21v-3.5a3 3 0 0 0-.8-2.3
+                         c2.7-.3 5.5-1.3 5.5-6
+                         a4.7 4.7 0 0 0-1.3-3.3
+                         4.4 4.4 0 0 0-.1-3.3
+                         S16.8 2.4 15 3.8
+                         a12 12 0 0 0-6 0
+                         C7.2 2.4 5.7 2.6 5.7 2.6
+                         a4.4 4.4 0 0 0-.1 3.3
+                         4.7 4.7 0 0 0-1.3 3.3
+                         c0 4.7 2.8 5.7 5.5 6
+                         A3 3 0 0 0 9 17.5V21"></path>
+              </svg>
             </div>
 
-            <!-- LINKEDIN -->
-            <div class="contact-card">
+            <h2>GitHub</h2>
 
-              <div class="contact-card-icon">
-                in
-              </div>
+            <p>
+              Explore my portfolio repository
+              and follow my upcoming analytics
+              projects and technical work.
+            </p>
 
-              <div class="contact-card-content">
-
-                <span class="contact-card-label">
-                  LINKEDIN
-                </span>
-
-                <h3>Connect on LinkedIn</h3>
-
-                <p>
-                  Explore my professional background,
-                  experience, and career journey.
-                </p>
-
-                <a href="https://www.linkedin.com/in/hari-p-7a3872176/"
-                   target="_blank"
-                   rel="noopener noreferrer"
-                   class="contact-link">
-                  View My LinkedIn Profile
-                </a>
-
-              </div>
-
+            <div class="contact-detail">
+              github.com/haripriyapotu
             </div>
 
-            <!-- GITHUB -->
-            <div class="contact-card">
+            <a class="contact-link"
+               href="https://github.com/haripriyapotu"
+               target="_blank"
+               rel="noopener noreferrer">
+              Explore My GitHub
+              <span aria-hidden="true">→</span>
+            </a>
 
-              <div class="contact-card-icon">
-                &lt;/&gt;
-              </div>
-
-              <div class="contact-card-content">
-
-                <span class="contact-card-label">
-                  GITHUB
-                </span>
-
-                <h3>Explore My GitHub</h3>
-
-                <p>
-                  Discover my portfolio development
-                  and upcoming data analytics projects.
-                </p>
-
-                <a href="https://github.com/haripriyapotu"
-                   target="_blank"
-                   rel="noopener noreferrer"
-                   class="contact-link">
-                  github.com/haripriyapotu
-                </a>
-
-              </div>
-
-            </div>
-
-            <!-- LOCATION -->
-            <div class="contact-card">
-
-              <div class="contact-card-icon">
-                ◉
-              </div>
-
-              <div class="contact-card-content">
-
-                <span class="contact-card-label">
-                  LOCATION
-                </span>
-
-                <h3>New Jersey, USA</h3>
-
-                <p>
-                  Based in the United States.
-                </p>
-
-              </div>
-
-            </div>
-
-          </div>
+          </article>
 
         </div>
 
-      </div>
-    </section>
-
-    <!-- CONTACT CTA -->
-    <section class="page-cta">
-      <div class="container">
-
-        <p class="section-label">
-          READY TO CONNECT?
+        <p class="contact-note">
+          <strong>Let's turn data into meaningful decisions.</strong>
+          I'm interested in opportunities where analytical
+          thinking, curiosity, and business understanding
+          come together to create an impact.
         </p>
-
-        <h2>
-          Let's Talk <span>Analytics.</span>
-        </h2>
-
-        <p>
-          Interested in discussing a role,
-          project, or collaboration opportunity?
-          I'd love to hear from you.
-        </p>
-
-        <a href="mailto:haripriyapotu4@gmail.com"
-           class="btn btn-gold">
-          Send Me an Email
-        </a>
 
       </div>
     </section>
