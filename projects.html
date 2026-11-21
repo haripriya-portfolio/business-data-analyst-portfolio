@@ -4,18 +4,84 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <meta name="description"
-        content="Data Analytics and Business Intelligence Projects by Hari Priya Potu">
+        content="Data analytics and business intelligence portfolio projects by Hari Priya Potu.">
 
-  <title>Projects | Hari Priya Potu</title>
+  <title>Featured Projects | Hari Priya Potu</title>
 
   <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* PROJECTS PAGE ONLY */
+
+    .projects-page .page-banner {
+      padding: 48px 0 42px;
+    }
+
+    .projects-page .page-banner h1 {
+      margin-bottom: 14px;
+    }
+
+    .projects-page .projects-section {
+      padding: 32px 0 75px;
+    }
+
+    .projects-page .projects-grid {
+      margin-top: 0;
+    }
+
+    .projects-page .project-card {
+      height: 100%;
+    }
+
+    .projects-page .project-visual {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .projects-page .project-company {
+      color: #e9cda2;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 15px;
+    }
+
+    .projects-page .project-visual-title {
+      color: #ffffff;
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 27px;
+      line-height: 1.35;
+    }
+
+    .projects-page .project-body {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .projects-page .project-coming-soon {
+      margin-top: auto;
+      padding-top: 20px;
+    }
+
+    @media (max-width: 600px) {
+      .projects-page .page-banner {
+        padding: 38px 0 32px;
+      }
+
+      .projects-page .projects-section {
+        padding: 24px 0 55px;
+      }
+    }
+  </style>
 </head>
 
-<body>
+<body class="projects-page">
 
   <!-- NAVIGATION -->
   <header class="header">
@@ -38,9 +104,7 @@
         <a href="experience.html">Experience</a>
         <a href="projects.html" class="active">Projects</a>
         <a href="education.html">Education</a>
-        <a href="contact.html" class="nav-contact">
-          Contact
-        </a>
+        <a href="contact.html" class="nav-contact">Contact</a>
       </div>
 
     </nav>
@@ -48,71 +112,40 @@
 
   <main>
 
-    <!-- PAGE BANNER -->
+    <!-- ONE MAIN HEADING -->
     <section class="page-banner">
       <div class="container">
-
-        <p class="section-label">
-          ANALYTICS PORTFOLIO
-        </p>
 
         <h1>
           Featured <span>Projects.</span>
         </h1>
 
         <p>
-          Exploring practical business challenges
-          through data analysis, visualization,
-          and analytical problem-solving.
+          Exploring real-world business challenges through
+          data analytics, visualization, and meaningful
+          business insights.
         </p>
 
       </div>
     </section>
 
-    <!-- PROJECTS SECTION -->
+    <!-- PROJECT CARDS -->
     <section class="section projects-section">
       <div class="container">
 
-        <p class="section-label">
-          01 / PROJECT SHOWCASE
-        </p>
-
-        <h2 class="section-title">
-          Turning Data Into <span>Solutions.</span>
-        </h2>
-
-        <p class="section-subtitle">
-          These are the portfolio projects I plan
-          to develop. Each will include a real
-          analytical workflow, documented methodology,
-          and practical business insights.
-        </p>
-
         <div class="projects-grid">
 
-          <!-- PROJECT 1 -->
+          <!-- PROJECT 1: WALMART -->
           <article class="project-card">
 
             <div class="project-visual">
-              <div class="project-visual-content">
+              <div>
+                <p class="project-company">Walmart</p>
 
-                <span class="project-visual-label">
-                  BUSINESS INTELLIGENCE
-                </span>
-
-                <div class="project-chart-bars">
-                  <span style="height: 40%"></span>
-                  <span style="height: 65%"></span>
-                  <span style="height: 50%"></span>
-                  <span style="height: 82%"></span>
-                  <span style="height: 72%"></span>
-                  <span style="height: 95%"></span>
-                </div>
-
-                <span class="project-visual-footer">
-                  SALES PERFORMANCE ANALYTICS
-                </span>
-
+                <h3 class="project-visual-title">
+                  Retail Sales<br>
+                  Performance Analytics
+                </h3>
               </div>
             </div>
 
@@ -122,65 +155,58 @@
                 <span class="project-status">
                   PLANNED PROJECT
                 </span>
+
                 <span class="project-index">
-                  PROJECT 01
+                  01 / RETAIL ANALYTICS
                 </span>
               </div>
 
-              <h3>Sales Performance Dashboard</h3>
+              <h3>
+                Walmart Sales Performance Analysis
+              </h3>
 
               <p>
-                A planned interactive dashboard
-                to analyze sales trends, revenue
-                performance, product categories,
-                and regional business performance.
+                An independent analytics case study using
+                historical Walmart sales data to explore
+                store performance, seasonal trends, and
+                factors influencing retail sales.
               </p>
 
-              <h4>Planned Analysis</h4>
+              <h4>Project Objectives</h4>
 
               <ul class="project-points">
-                <li>Revenue and sales trends</li>
-                <li>Product and regional performance</li>
-                <li>KPI monitoring and reporting</li>
+                <li>Analyze sales performance across stores.</li>
+                <li>Identify seasonal and holiday sales trends.</li>
+                <li>Compare department-level performance.</li>
+                <li>Create an interactive Power BI dashboard.</li>
+                <li>Develop data-driven business recommendations.</li>
               </ul>
 
               <div class="project-tags">
-                <span>Power BI</span>
                 <span>SQL</span>
+                <span>Python</span>
+                <span>Power BI</span>
                 <span>Excel</span>
-                <span>Data Visualization</span>
               </div>
 
               <p class="project-coming-soon">
-                Case study and dashboard coming soon.
+                Independent Case Study · In Development
               </p>
 
             </div>
           </article>
 
-          <!-- PROJECT 2 -->
+          <!-- PROJECT 2: NETFLIX -->
           <article class="project-card">
 
             <div class="project-visual">
-              <div class="project-visual-content">
+              <div>
+                <p class="project-company">Netflix</p>
 
-                <span class="project-visual-label">
-                  PYTHON & DATA ANALYSIS
-                </span>
-
-                <div class="project-chart-bars">
-                  <span style="height: 75%"></span>
-                  <span style="height: 45%"></span>
-                  <span style="height: 90%"></span>
-                  <span style="height: 58%"></span>
-                  <span style="height: 70%"></span>
-                  <span style="height: 52%"></span>
-                </div>
-
-                <span class="project-visual-footer">
-                  CUSTOMER INSIGHTS
-                </span>
-
+                <h3 class="project-visual-title">
+                  Content Strategy<br>
+                  & Catalog Analytics
+                </h3>
               </div>
             </div>
 
@@ -190,65 +216,58 @@
                 <span class="project-status">
                   PLANNED PROJECT
                 </span>
+
                 <span class="project-index">
-                  PROJECT 02
+                  02 / CONTENT ANALYTICS
                 </span>
               </div>
 
-              <h3>Customer Behavior Analysis</h3>
+              <h3>
+                Netflix Content Analysis
+              </h3>
 
               <p>
-                A planned analytical study
-                examining customer purchasing
-                patterns, customer segments,
-                and behavioral trends.
+                An independent analysis of publicly
+                available Netflix catalog data to
+                explore content trends, genre
+                distribution, and programming strategy.
               </p>
 
-              <h4>Planned Analysis</h4>
+              <h4>Project Objectives</h4>
 
               <ul class="project-points">
-                <li>Customer segmentation</li>
-                <li>Purchasing behavior trends</li>
-                <li>Exploratory data analysis</li>
+                <li>Analyze movies and TV show distribution.</li>
+                <li>Identify popular genres by catalog volume.</li>
+                <li>Explore content trends across years.</li>
+                <li>Compare content availability by country.</li>
+                <li>Present findings through Tableau dashboards.</li>
               </ul>
 
               <div class="project-tags">
                 <span>Python</span>
                 <span>Pandas</span>
                 <span>SQL</span>
-                <span>EDA</span>
+                <span>Tableau</span>
               </div>
 
               <p class="project-coming-soon">
-                Analysis and findings coming soon.
+                Independent Case Study · Planned
               </p>
 
             </div>
           </article>
 
-          <!-- PROJECT 3 -->
+          <!-- PROJECT 3: AMAZON -->
           <article class="project-card">
 
             <div class="project-visual">
-              <div class="project-visual-content">
+              <div>
+                <p class="project-company">E-Commerce</p>
 
-                <span class="project-visual-label">
-                  REPORTING & AUTOMATION
-                </span>
-
-                <div class="project-chart-bars">
-                  <span style="height: 32%"></span>
-                  <span style="height: 50%"></span>
-                  <span style="height: 60%"></span>
-                  <span style="height: 72%"></span>
-                  <span style="height: 84%"></span>
-                  <span style="height: 96%"></span>
-                </div>
-
-                <span class="project-visual-footer">
-                  KPI REPORTING WORKFLOW
-                </span>
-
+                <h3 class="project-visual-title">
+                  Amazon-Inspired<br>
+                  Customer Analytics
+                </h3>
               </div>
             </div>
 
@@ -258,119 +277,67 @@
                 <span class="project-status">
                   PLANNED PROJECT
                 </span>
+
                 <span class="project-index">
-                  PROJECT 03
+                  03 / E-COMMERCE
                 </span>
               </div>
 
-              <h3>KPI Reporting Automation</h3>
+              <h3>
+                Amazon-Inspired E-Commerce Analysis
+              </h3>
 
               <p>
-                A planned reporting workflow
-                designed to organize business
-                data, automate recurring reports,
-                and simplify KPI tracking.
+                An independent e-commerce analytics
+                project inspired by Amazon's business
+                model, using a public retail dataset
+                rather than Amazon's internal data.
               </p>
 
-              <h4>Planned Analysis</h4>
+              <h4>Project Objectives</h4>
 
               <ul class="project-points">
-                <li>Data cleaning and validation</li>
-                <li>Automated reporting workflows</li>
-                <li>KPI summaries and trend analysis</li>
+                <li>Analyze orders and revenue trends.</li>
+                <li>Explore customer purchasing patterns.</li>
+                <li>Evaluate delivery performance.</li>
+                <li>Identify customer segments.</li>
+                <li>Build an interactive business dashboard.</li>
               </ul>
 
               <div class="project-tags">
-                <span>Advanced Excel</span>
+                <span>SQL</span>
                 <span>Python</span>
-                <span>Power Query</span>
-                <span>Automation</span>
+                <span>Power BI</span>
+                <span>Customer Analytics</span>
               </div>
 
               <p class="project-coming-soon">
-                Workflow and documentation coming soon.
+                Independent Case Study · Planned
               </p>
 
             </div>
           </article>
 
         </div>
+
       </div>
     </section>
 
-    <!-- PROJECT DEVELOPMENT PROCESS -->
-    <section class="section workflow-section">
-      <div class="container">
-
-        <p class="section-label">
-          02 / PROJECT METHODOLOGY
-        </p>
-
-        <h2 class="section-title">
-          My Analytical <span>Approach.</span>
-        </h2>
-
-        <div class="workflow-grid">
-
-          <div class="workflow-card">
-            <span>01</span>
-            <h3>Define</h3>
-            <p>
-              Identify the business question
-              and establish measurable objectives.
-            </p>
-          </div>
-
-          <div class="workflow-card">
-            <span>02</span>
-            <h3>Prepare</h3>
-            <p>
-              Collect, clean, validate,
-              and organize relevant datasets.
-            </p>
-          </div>
-
-          <div class="workflow-card">
-            <span>03</span>
-            <h3>Analyze</h3>
-            <p>
-              Explore patterns, calculate metrics,
-              and create meaningful visualizations.
-            </p>
-          </div>
-
-          <div class="workflow-card">
-            <span>04</span>
-            <h3>Present</h3>
-            <p>
-              Communicate findings, limitations,
-              and actionable recommendations.
-            </p>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- GITHUB SECTION -->
+    <!-- NEXT PAGE -->
     <section class="page-cta">
       <div class="container">
 
         <h2>
-          Follow My <span>Project Journey.</span>
+          Explore My <span>Background.</span>
         </h2>
 
         <p>
-          As projects are completed, I'll publish
-          their code, documentation, and analysis
-          on GitHub.
+          Learn more about the education and analytical
+          skills behind my professional journey.
         </p>
 
-        <a href="https://github.com/haripriyapotu"
-           class="btn btn-gold"
-           target="_blank"
-           rel="noopener noreferrer">
-          Visit My GitHub
+        <a href="education.html" class="btn btn-gold">
+          View My Education
         </a>
 
       </div>
