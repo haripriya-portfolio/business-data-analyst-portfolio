@@ -1,52 +1,80 @@
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta name="description"
-        content="Connect with Hari Priya Potu, Data and Business Analyst.">
-
   <title>Contact | Hari Priya Potu</title>
+
+  <meta name="description"
+    content="Connect with Hari Priya Potu, Data and Business Analyst. Open to professional opportunities and collaborations.">
 
   <link rel="stylesheet" href="style.css">
 
   <style>
-    /* CONTACT PAGE ONLY */
+    /* CONTACT PAGE - COMPLETE DESIGN */
+
+    .contact-page {
+      margin: 0;
+    }
 
     .contact-page .page-banner {
-      padding: 52px 0 46px;
+      padding: 55px 0 48px !important;
+      background: linear-gradient(
+        115deg,
+        #0d1c30 0%,
+        #152b41 65%,
+        #304354 100%
+      );
+      border-bottom: 3px solid #c5a477;
     }
 
     .contact-page .page-banner h1 {
-      margin-bottom: 14px;
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: clamp(40px, 5vw, 64px);
+      line-height: 1.2;
+      color: #ffffff;
+      margin: 0 0 18px;
+    }
+
+    .contact-page .page-banner h1 span {
+      color: #e9cda2;
+    }
+
+    .contact-page .page-banner p {
+      max-width: 790px;
+      font-size: 16px;
+      line-height: 1.9;
+      color: #e1e8f0;
+      margin: 0;
     }
 
     .contact-page .contact-section {
-      background: #f0f4f8;
-      padding: 48px 0 85px;
+      padding: 55px 0 80px !important;
+      background: #edf2f7;
     }
 
     .contact-page .contact-grid {
-      display: grid;
+      display: grid !important;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 25px;
+      gap: 24px;
+      align-items: stretch;
     }
 
     .contact-page .contact-card {
       background: #ffffff;
       border: 1px solid #dce5ed;
-      border-radius: 12px;
-      padding: 38px 30px;
-      box-shadow: 0 12px 36px rgba(16, 31, 53, 0.06);
-      transition: transform 0.25s ease,
-                  box-shadow 0.25s ease,
-                  border-color 0.25s ease;
+      border-radius: 13px;
+      padding: 34px 27px;
+      box-shadow: 0 12px 30px rgba(16, 31, 53, 0.07);
       display: flex;
       flex-direction: column;
       align-items: flex-start;
+      min-width: 0;
+      transition: transform 0.25s ease,
+                  box-shadow 0.25s ease,
+                  border-color 0.25s ease;
     }
 
     .contact-page .contact-card:hover {
@@ -56,58 +84,58 @@
     }
 
     .contact-page .contact-icon {
-      width: 56px;
-      height: 56px;
-      border-radius: 12px;
+      width: 54px;
+      height: 54px;
       background: #101f35;
       color: #e9cda2;
+      border-radius: 11px;
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-bottom: 25px;
+      margin-bottom: 23px;
     }
 
     .contact-page .contact-icon svg {
-      width: 26px;
-      height: 26px;
-      stroke: currentColor;
+      width: 25px;
+      height: 25px;
       fill: none;
+      stroke: currentColor;
       stroke-width: 1.8;
       stroke-linecap: round;
       stroke-linejoin: round;
     }
 
     .contact-page .contact-card h2 {
-      font-family: 'Playfair Display', Georgia, serif;
-      color: #101f35;
+      font-family: "Playfair Display", Georgia, serif;
       font-size: 25px;
+      color: #101f35;
       margin: 0 0 12px;
     }
 
     .contact-page .contact-card p {
       color: #65778a;
       font-size: 14px;
-      line-height: 1.8;
+      line-height: 1.85;
       margin: 0 0 20px;
     }
 
     .contact-page .contact-detail {
       font-size: 14px;
+      font-weight: 700;
       color: #294861;
-      font-weight: 600;
       overflow-wrap: anywhere;
-      margin-bottom: 24px;
+      margin-bottom: 22px;
     }
 
     .contact-page .contact-link {
       display: inline-flex;
       align-items: center;
       gap: 9px;
-      margin-top: auto;
-      color: #9b774b;
+      color: #a27e50;
       font-size: 14px;
       font-weight: 700;
       text-decoration: none;
+      margin-top: auto;
       transition: color 0.2s ease;
     }
 
@@ -115,10 +143,14 @@
       color: #101f35;
     }
 
+    .contact-page .contact-link span {
+      font-size: 19px;
+    }
+
     .contact-page .contact-note {
+      max-width: 760px;
+      margin: 43px auto 0;
       text-align: center;
-      margin: 45px auto 0;
-      max-width: 680px;
       color: #65778a;
       font-size: 15px;
       line-height: 1.9;
@@ -136,11 +168,15 @@
 
     @media (max-width: 600px) {
       .contact-page .page-banner {
-        padding: 38px 0 32px;
+        padding: 40px 0 35px !important;
+      }
+
+      .contact-page .page-banner p {
+        font-size: 14px;
       }
 
       .contact-page .contact-section {
-        padding: 28px 0 55px;
+        padding: 30px 0 55px !important;
       }
 
       .contact-page .contact-grid {
@@ -149,7 +185,7 @@
       }
 
       .contact-page .contact-card {
-        padding: 30px 24px;
+        padding: 29px 24px;
       }
 
       .contact-page .contact-note {
@@ -169,9 +205,10 @@
         Hari Priya<span>.</span>
       </a>
 
-      <button class="menu-toggle"
-              aria-label="Toggle navigation"
-              aria-expanded="false">
+      <button
+        class="menu-toggle"
+        aria-label="Toggle navigation"
+        aria-expanded="false">
         ☰
       </button>
 
@@ -182,7 +219,9 @@
         <a href="experience.html">Experience</a>
         <a href="projects.html">Projects</a>
         <a href="education.html">Education</a>
-        <a href="contact.html" class="nav-contact active">Contact</a>
+        <a href="contact.html" class="nav-contact active">
+          Contact
+        </a>
       </div>
 
     </nav>
@@ -190,7 +229,7 @@
 
   <main>
 
-    <!-- ONE MAIN HEADING -->
+    <!-- SINGLE PAGE HEADING -->
     <section class="page-banner">
       <div class="container">
 
@@ -199,12 +238,12 @@
         </h1>
 
         <p>
-          Whether you're a recruiter exploring potential
-          talent, a hiring manager looking for an analytical
-          problem-solver, or a professional interested in
-          connecting, I'd love to hear from you. I'm always
-          open to meaningful conversations, new opportunities,
-          and collaborations where data can make a difference.
+          Whether you're a recruiter exploring potential talent,
+          a hiring manager looking for an analytical problem-solver,
+          or a professional interested in connecting, I'd love
+          to hear from you. I'm always open to meaningful
+          conversations, new opportunities, and collaborations
+          where data can make a difference.
         </p>
 
       </div>
@@ -230,17 +269,18 @@
             <h2>Email</h2>
 
             <p>
-              Have an opportunity, question,
-              or collaboration in mind?
-              Feel free to reach out directly.
+              Have a job opportunity, professional inquiry,
+              or collaboration in mind? Feel free to
+              reach out directly.
             </p>
 
             <div class="contact-detail">
               haripriyapotu4@gmail.com
             </div>
 
-            <a class="contact-link"
-               href="mailto:haripriyapotu4@gmail.com">
+            <a
+              class="contact-link"
+              href="mailto:haripriyapotu4@gmail.com">
               Send an Email
               <span aria-hidden="true">→</span>
             </a>
@@ -264,19 +304,20 @@
             <h2>LinkedIn</h2>
 
             <p>
-              Connect with me professionally
-              and explore my experience,
-              skills, and career journey.
+              Let's connect professionally. Explore
+              my experience, analytical skills,
+              and career journey.
             </p>
 
             <div class="contact-detail">
               Hari Priya Potu
             </div>
 
-            <a class="contact-link"
-               href="https://www.linkedin.com/in/hari-p-7a3872176/"
-               target="_blank"
-               rel="noopener noreferrer">
+            <a
+              class="contact-link"
+              href="https://www.linkedin.com/in/hari-p-7a3872176/"
+              target="_blank"
+              rel="noopener noreferrer">
               View LinkedIn Profile
               <span aria-hidden="true">→</span>
             </a>
@@ -307,18 +348,19 @@
 
             <p>
               Explore my portfolio repository
-              and follow my upcoming analytics
-              projects and technical work.
+              and follow my analytics projects,
+              dashboards, and technical work.
             </p>
 
             <div class="contact-detail">
               github.com/haripriyapotu
             </div>
 
-            <a class="contact-link"
-               href="https://github.com/haripriyapotu"
-               target="_blank"
-               rel="noopener noreferrer">
+            <a
+              class="contact-link"
+              href="https://github.com/haripriyapotu"
+              target="_blank"
+              rel="noopener noreferrer">
               Explore My GitHub
               <span aria-hidden="true">→</span>
             </a>
@@ -327,11 +369,12 @@
 
         </div>
 
+        <!-- SHORT CLOSING MESSAGE -->
         <p class="contact-note">
           <strong>Let's turn data into meaningful decisions.</strong>
-          I'm interested in opportunities where analytical
-          thinking, curiosity, and business understanding
-          come together to create an impact.
+          I look forward to connecting with people and
+          organizations that value curiosity, analytical
+          thinking, and business impact.
         </p>
 
       </div>
