@@ -2,11 +2,8 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap');
 
 /* ==========================================
-   HARI PRIYA POTU PORTFOLIO
-   COMPLETE STYLESHEET
+   GLOBAL STYLES
 ========================================== */
-
-/* GLOBAL */
 
 :root {
   --navy: #101f35;
@@ -268,7 +265,6 @@ ul {
 
 /* ==========================================
    ABOUT STORY
-   CENTERED WITHOUT SIDE HEADING
 ========================================== */
 
 .about-main {
@@ -347,8 +343,11 @@ ul {
 .page-banner {
   padding: 90px 0;
   background:
-    radial-gradient(circle at 85% 10%,
-      rgba(197,164,119,0.17),transparent 35%),
+    radial-gradient(
+      circle at 85% 10%,
+      rgba(197,164,119,0.17),
+      transparent 35%
+    ),
     linear-gradient(125deg,#0b192a,#1b3650);
   border-bottom: 3px solid var(--gold);
 }
@@ -377,6 +376,30 @@ ul {
 }
 
 /* ==========================================
+   PROFESSIONAL SKILLS SPACING FIX
+   ONLY AFFECTS SKILLS PAGE
+========================================== */
+
+/* Shorter header */
+body:has(.toolkit-section) .page-banner {
+  padding-top: 55px;
+  padding-bottom: 45px;
+}
+
+/* Bring skill content closer to header */
+.toolkit-section {
+  padding-top: 32px;
+  padding-bottom: 75px;
+  background: #edf3f8;
+}
+
+/* Reduce gap before cards */
+.toolkit-section .section-subtitle {
+  margin-bottom: 25px;
+  line-height: 1.8;
+}
+
+/* ==========================================
    HOME PAGE
 ========================================== */
 
@@ -385,9 +408,17 @@ ul {
   display: flex;
   align-items: center;
   background:
-    radial-gradient(circle at 82% 20%,
-      rgba(197,164,119,0.13),transparent 34%),
-    linear-gradient(135deg,#091525,#142b43 60%,#203c55);
+    radial-gradient(
+      circle at 82% 20%,
+      rgba(197,164,119,0.13),
+      transparent 34%
+    ),
+    linear-gradient(
+      135deg,
+      #091525,
+      #142b43 60%,
+      #203c55
+    );
 }
 
 .hero-grid {
@@ -573,12 +604,8 @@ ul {
 }
 
 /* ==========================================
-   SKILLS
+   SKILLS CARDS
 ========================================== */
-
-.toolkit-section {
-  background: #edf3f8;
-}
 
 .toolkit-grid {
   display: grid;
@@ -656,6 +683,10 @@ ul {
   border-radius: 6px;
   font-size: 12px;
 }
+
+/* ==========================================
+   WORKFLOW
+========================================== */
 
 .workflow-section {
   background: #ffffff;
@@ -1217,8 +1248,11 @@ ul {
   padding: 80px 0;
   text-align: center;
   background:
-    radial-gradient(circle at 50% 0%,
-      rgba(197,164,119,0.13),transparent 45%),
+    radial-gradient(
+      circle at 50% 0%,
+      rgba(197,164,119,0.13),
+      transparent 45%
+    ),
     linear-gradient(135deg,#0b192b,#203c56);
 }
 
@@ -1266,6 +1300,7 @@ footer {
 ========================================== */
 
 @media (max-width: 1050px) {
+
   .nav-links {
     gap: 15px;
   }
@@ -1289,6 +1324,7 @@ footer {
 }
 
 @media (max-width: 800px) {
+
   .navbar {
     min-height: 72px;
   }
@@ -1335,12 +1371,26 @@ footer {
 }
 
 @media (max-width: 600px) {
+
   .section {
     padding: 60px 0;
   }
 
   .page-banner {
     padding: 65px 0;
+  }
+
+  /* Keep skills page compact on mobile */
+  body:has(.toolkit-section) .page-banner {
+    padding: 45px 0 35px;
+  }
+
+  .toolkit-section {
+    padding: 25px 0 55px;
+  }
+
+  .toolkit-section .section-subtitle {
+    margin-bottom: 20px;
   }
 
   .hero-grid {
@@ -1415,6 +1465,7 @@ footer {
 }
 
 @media (prefers-reduced-motion: reduce) {
+
   *,
   *::before,
   *::after {
