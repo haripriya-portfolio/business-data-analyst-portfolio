@@ -1,21 +1,467 @@
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Hari Priya Potu | Data & Business Analyst with 3.5+ years of experience in analytics, business intelligence, and data-driven strategy.">
+  <title>Hari Priya Potu | Data & Business Analyst</title>
 
-  <meta name="description"
-        content="Hari Priya Potu - Data and Business Analyst">
-
-  <title>Home | Hari Priya Potu</title>
-
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* HOME PAGE ONLY */
+
+    .home-page {
+      --home-navy: #0b1d31;
+      --home-gold: #c5a477;
+      --home-gold-light: #f0cc91;
+    }
+
+    .home-page .home-hero {
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(
+        115deg,
+        #091a2d 0%,
+        #10263d 58%,
+        #1b334a 100%
+      );
+      border-bottom: 3px solid #c5a477;
+      padding: 85px 0 118px;
+    }
+
+    .home-page .hero-layout {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      align-items: center;
+      gap: 48px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .home-page .hero-eyebrow {
+      font-family: 'DM Sans', sans-serif;
+      color: #e9bd7c;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin: 0 0 23px;
+    }
+
+    .home-page .hero-content h1 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(48px, 5.2vw, 76px);
+      line-height: 1.12;
+      letter-spacing: -1.5px;
+      color: #ffffff;
+      margin: 0 0 26px;
+    }
+
+    .home-page .hero-content h1 span {
+      color: #e9bd7c;
+    }
+
+    .home-page .hero-description {
+      color: #e0e8f1;
+      font-size: 17px;
+      line-height: 1.85;
+      max-width: 620px;
+      margin: 0 0 33px;
+    }
+
+    .home-page .hero-description strong {
+      color: #ffffff;
+    }
+
+    .home-page .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .home-page .hero-btn {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      padding: 15px 25px;
+      min-height: 54px;
+      border-radius: 10px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px;
+      font-weight: 800;
+      text-decoration: none;
+      transition: transform .2s ease,
+                  background .2s ease;
+    }
+
+    .home-page .hero-btn:hover {
+      transform: translateY(-3px);
+    }
+
+    .home-page .hero-btn-primary {
+      color: #101f35;
+      background: #f0cc91;
+      border: 2px solid #f0cc91;
+    }
+
+    .home-page .hero-btn-primary:hover {
+      background: #ffe0ab;
+    }
+
+    .home-page .hero-btn-outline {
+      color: #ffffff;
+      background: transparent;
+      border: 2px solid #e9bd7c;
+    }
+
+    .home-page .hero-btn-outline:hover {
+      background: rgba(233,189,124,.12);
+    }
+
+    /* LAPTOP ANALYTICS VISUAL - NO COFFEE */
+
+    .home-page .hero-art {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 380px;
+    }
+
+    .home-page .hero-art::before {
+      content: "";
+      position: absolute;
+      width: 420px;
+      height: 320px;
+      max-width: 100%;
+      border-radius: 50%;
+      background: radial-gradient(
+        circle,
+        rgba(197,164,119,.24),
+        transparent 70%
+      );
+      filter: blur(15px);
+    }
+
+    .home-page .laptop {
+      width: min(100%, 480px);
+      position: relative;
+      transform: perspective(1000px) rotateY(-8deg);
+    }
+
+    .home-page .laptop-screen {
+      position: relative;
+      border: 11px solid #263648;
+      border-bottom-width: 15px;
+      border-radius: 17px 17px 6px 6px;
+      background: #081625;
+      box-shadow: 0 25px 55px rgba(0,0,0,.4);
+      padding: 24px;
+      min-height: 270px;
+    }
+
+    .home-page .screen-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 23px;
+    }
+
+    .home-page .screen-title {
+      color: #e6edf5;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: .3px;
+    }
+
+    .home-page .screen-dots {
+      display: flex;
+      gap: 5px;
+    }
+
+    .home-page .screen-dots i {
+      display: block;
+      width: 6px;
+      height: 6px;
+      background: #c5a477;
+      opacity: .7;
+      border-radius: 50%;
+    }
+
+    .home-page .chart-area {
+      position: relative;
+      height: 160px;
+      border-left: 1px solid rgba(255,255,255,.13);
+      border-bottom: 1px solid rgba(255,255,255,.13);
+      background: repeating-linear-gradient(
+        to top,
+        transparent 0,
+        transparent 38px,
+        rgba(255,255,255,.06) 39px,
+        rgba(255,255,255,.06) 40px
+      );
+    }
+
+    .home-page .chart-bars {
+      position: absolute;
+      inset: 0 12px 0 12px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-around;
+      gap: 12px;
+    }
+
+    .home-page .chart-bars span {
+      display: block;
+      width: 13%;
+      height: var(--bar-height);
+      background: linear-gradient(
+        180deg,
+        #f2cb89,
+        #a77940
+      );
+      border-radius: 4px 4px 0 0;
+      box-shadow: 0 0 14px rgba(197,164,119,.12);
+    }
+
+    .home-page .chart-labels {
+      display: flex;
+      justify-content: space-around;
+      color: #9babbc;
+      font-size: 10px;
+      padding-top: 11px;
+    }
+
+    .home-page .laptop-base {
+      width: 112%;
+      height: 18px;
+      margin-left: -6%;
+      background: linear-gradient(
+        180deg,
+        #aab3bf,
+        #586677 65%,
+        #263442
+      );
+      border-radius: 3px 3px 45% 45%;
+      box-shadow: 0 16px 24px rgba(0,0,0,.25);
+    }
+
+    .home-page .laptop-base::after {
+      content: "";
+      display: block;
+      width: 90px;
+      height: 5px;
+      margin: auto;
+      background: #6e7b89;
+      border-radius: 0 0 10px 10px;
+    }
+
+    /* HIGHLIGHTS */
+
+    .home-page .highlights-wrap {
+      position: relative;
+      z-index: 3;
+      margin-top: -67px;
+    }
+
+    .home-page .highlights-panel {
+      background: #fbf8f3;
+      border: 1px solid #e7ded1;
+      border-radius: 15px;
+      box-shadow: 0 16px 35px rgba(16,31,53,.13);
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      padding: 30px 22px;
+    }
+
+    .home-page .highlight-item {
+      display: flex;
+      align-items: center;
+      gap: 17px;
+      padding: 10px 25px;
+      min-width: 0;
+    }
+
+    .home-page .highlight-item + .highlight-item {
+      border-left: 1px solid #d9cfc1;
+    }
+
+    .home-page .highlight-icon {
+      flex-shrink: 0;
+      width: 58px;
+      height: 58px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: #ffffff;
+      color: #b18b59;
+    }
+
+    .home-page .highlight-icon svg {
+      width: 29px;
+      height: 29px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .home-page .highlight-item h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      color: #101f35;
+      font-size: 19px;
+      line-height: 1.35;
+      margin: 0 0 7px;
+    }
+
+    .home-page .highlight-item p {
+      font-size: 13px;
+      color: #465b70;
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    /* WHAT DRIVES ME */
+
+    .home-page .drives-section {
+      background: #ffffff;
+      text-align: center;
+      padding: 78px 0 95px;
+    }
+
+    .home-page .drives-content {
+      max-width: 850px;
+      margin: 0 auto;
+    }
+
+    .home-page .drives-content h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      color: #101f35;
+      font-size: clamp(32px, 4vw, 46px);
+      line-height: 1.25;
+      margin: 0 0 23px;
+    }
+
+    .home-page .drives-content h2 span {
+      color: #a77e4c;
+    }
+
+    .home-page .drives-content p {
+      color: #465b70;
+      font-size: 17px;
+      line-height: 1.9;
+      margin: 0;
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 1050px) {
+      .home-page .hero-layout {
+        grid-template-columns: 1fr 0.85fr;
+        gap: 25px;
+      }
+
+      .home-page .highlight-item {
+        padding: 10px 15px;
+        gap: 12px;
+      }
+
+      .home-page .highlight-item h2 {
+        font-size: 16px;
+      }
+    }
+
+    @media (max-width: 800px) {
+      .home-page .home-hero {
+        padding: 65px 0 110px;
+      }
+
+      .home-page .hero-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .home-page .hero-art {
+        min-height: 310px;
+        margin-top: 20px;
+      }
+
+      .home-page .laptop {
+        max-width: 430px;
+      }
+
+      .home-page .highlights-panel {
+        grid-template-columns: 1fr;
+        padding: 12px 25px;
+      }
+
+      .home-page .highlight-item {
+        padding: 19px 8px;
+      }
+
+      .home-page .highlight-item + .highlight-item {
+        border-left: none;
+        border-top: 1px solid #d9cfc1;
+      }
+    }
+
+    @media (max-width: 500px) {
+      .home-page .home-hero {
+        padding: 48px 0 100px;
+      }
+
+      .home-page .hero-eyebrow {
+        font-size: 10px;
+        letter-spacing: 2px;
+      }
+
+      .home-page .hero-content h1 {
+        font-size: 43px;
+      }
+
+      .home-page .hero-description {
+        font-size: 15px;
+      }
+
+      .home-page .hero-buttons {
+        gap: 12px;
+      }
+
+      .home-page .hero-btn {
+        width: 100%;
+      }
+
+      .home-page .hero-art {
+        min-height: 240px;
+      }
+
+      .home-page .laptop-screen {
+        min-height: 215px;
+        padding: 16px;
+      }
+
+      .home-page .chart-area {
+        height: 115px;
+      }
+
+      .home-page .drives-section {
+        padding: 60px 0 75px;
+      }
+
+      .home-page .drives-content p {
+        font-size: 15px;
+      }
+    }
+  </style>
 </head>
 
-<body>
+<body class="home-page">
 
   <!-- NAVIGATION -->
   <header class="header">
@@ -38,106 +484,209 @@
         <a href="experience.html">Experience</a>
         <a href="projects.html">Projects</a>
         <a href="education.html">Education</a>
-        <a href="contact.html" class="nav-contact">
-          Contact
-        </a>
+        <a href="contact.html" class="nav-contact">Contact</a>
       </div>
 
     </nav>
   </header>
 
-  <!-- HOME PAGE -->
   <main>
-    <section class="hero">
-      <div class="container hero-grid">
+
+    <!-- HERO SECTION -->
+    <section class="home-hero">
+      <div class="container hero-layout">
 
         <div class="hero-content">
 
-          <p class="eyebrow">
-            DATA ANALYTICS · BUSINESS INTELLIGENCE · STRATEGY
+          <p class="hero-eyebrow">
+            DATA | ANALYTICS | BUSINESS IMPACT
           </p>
 
           <h1>
-            Hari Priya <span>Potu.</span>
+            Data &amp; Business<br>
+            <span>Analyst.</span>
           </h1>
 
-          <h2>Data & Business Analyst</h2>
-
           <p class="hero-description">
-            Transforming complex data into meaningful
-            business insights through analytics,
-            visualization, and strategic thinking.
+            I'm <strong>Hari Priya Potu</strong>,
+            a Data &amp; Business Analyst with
+            <strong>3.5+ years of experience</strong>.
+            I love finding the stories hidden in data
+            and turning those insights into strategies
+            that help businesses make better decisions.
           </p>
 
-          <div class="hero-actions">
+          <div class="hero-buttons">
 
             <a href="projects.html"
-               class="btn btn-gold">
-              Explore My Work
+               class="hero-btn hero-btn-primary">
+              View My Projects
             </a>
 
-            <a href="about.html"
-               class="btn btn-outline">
-              Discover My Story
+            <a href="contact.html"
+               class="hero-btn hero-btn-outline">
+              Contact Me
             </a>
-
-          </div>
-
-          <div class="hero-stats">
-
-            <div>
-              <strong>3.5+</strong>
-              <span>Years of Experience</span>
-            </div>
-
-            <div>
-              <strong>02</strong>
-              <span>Master's Degrees</span>
-            </div>
-
-            <div>
-              <strong>SQL · Python</strong>
-              <span>Analytics Expertise</span>
-            </div>
 
           </div>
         </div>
 
-        <!-- ANALYTICS VISUAL -->
-        <div class="hero-visual">
+        <!-- ANALYTICS LAPTOP ILLUSTRATION -->
+        <div class="hero-art" aria-hidden="true">
 
-          <div class="visual-heading">
-            <span class="live-dot"></span>
-            ANALYTICS & BUSINESS INTELLIGENCE
+          <div class="laptop">
+
+            <div class="laptop-screen">
+
+              <div class="screen-top">
+
+                <span class="screen-title">
+                  Business Performance
+                </span>
+
+                <span class="screen-dots">
+                  <i></i><i></i><i></i>
+                </span>
+
+              </div>
+
+              <div class="chart-area">
+
+                <div class="chart-bars">
+                  <span style="--bar-height: 25%"></span>
+                  <span style="--bar-height: 38%"></span>
+                  <span style="--bar-height: 32%"></span>
+                  <span style="--bar-height: 53%"></span>
+                  <span style="--bar-height: 66%"></span>
+                  <span style="--bar-height: 59%"></span>
+                  <span style="--bar-height: 85%"></span>
+                </div>
+
+              </div>
+
+              <div class="chart-labels">
+                <span>Jan</span>
+                <span>Feb</span>
+                <span>Mar</span>
+                <span>Apr</span>
+                <span>May</span>
+                <span>Jun</span>
+                <span>Jul</span>
+              </div>
+
+            </div>
+
+            <div class="laptop-base"></div>
+
           </div>
 
-          <h3>Data-Driven Insights</h3>
+        </div>
 
-          <div class="visual-bars">
-            <div style="height:38%"></div>
-            <div style="height:55%"></div>
-            <div style="height:48%"></div>
-            <div style="height:70%"></div>
-            <div style="height:62%"></div>
-            <div style="height:85%"></div>
-            <div style="height:76%"></div>
-            <div style="height:95%"></div>
+      </div>
+    </section>
+
+    <!-- PROFESSIONAL HIGHLIGHTS -->
+    <section class="highlights-wrap">
+      <div class="container">
+
+        <div class="highlights-panel">
+
+          <!-- EDUCATION -->
+          <div class="highlight-item">
+
+            <div class="highlight-icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="m2 9 10-5 10 5-10 5-10-5Z"></path>
+                <path d="M6 11v6c4 3 8 3 12 0v-6"></path>
+                <path d="M22 9v7"></path>
+              </svg>
+            </div>
+
+            <div>
+              <h2>Dual Master's Degrees</h2>
+              <p>
+                M.S. in Data Science &amp;<br>
+                M.S. in Business Analytics
+              </p>
+            </div>
+
           </div>
 
-          <div class="visual-footer">
-            <span>ANALYSIS</span>
-            <span>REPORTING</span>
-            <span>INSIGHTS</span>
+          <!-- EXPERIENCE -->
+          <div class="highlight-item">
+
+            <div class="highlight-icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <rect x="3" y="7" width="18"
+                      height="14" rx="2"></rect>
+                <path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                <path d="M3 12h18"></path>
+              </svg>
+            </div>
+
+            <div>
+              <h2>3.5+ Years of Experience</h2>
+              <p>
+                In Data &amp; Business Analytics
+              </p>
+            </div>
+
           </div>
 
-          <p class="visual-note">
-            Illustrative analytics visualization
+          <!-- ANALYTICAL MINDSET -->
+          <div class="highlight-item">
+
+            <div class="highlight-icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <rect x="3" y="13" width="4"
+                      height="8"></rect>
+                <rect x="10" y="9" width="4"
+                      height="12"></rect>
+                <rect x="17" y="4" width="4"
+                      height="17"></rect>
+              </svg>
+            </div>
+
+            <div>
+              <h2>Business + Data Mindset</h2>
+              <p>
+                Solving business problems with
+                data-driven solutions
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- WHAT DRIVES ME -->
+    <section class="drives-section">
+      <div class="container">
+
+        <div class="drives-content">
+
+          <h2>
+            What <span>Drives Me.</span>
+          </h2>
+
+          <p>
+            I love working at the intersection of data
+            and business, finding patterns, uncovering
+            opportunities, and helping turn complex
+            information into meaningful solutions.
+            For me, the most exciting part of analytics
+            is seeing how a simple insight can make
+            a real difference.
           </p>
 
         </div>
 
       </div>
     </section>
+
   </main>
 
   <!-- FOOTER -->
