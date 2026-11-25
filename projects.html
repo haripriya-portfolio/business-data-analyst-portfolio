@@ -7,14 +7,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <meta name="description"
-        content="Data analytics and business intelligence portfolio projects by Hari Priya Potu.">
+        content="Data analytics, machine learning and business intelligence portfolio projects by Hari Priya Potu.">
 
   <title>Featured Projects | Hari Priya Potu</title>
 
   <link rel="stylesheet" href="style.css">
 
   <style>
+
     /* PROJECTS PAGE ONLY */
+
+    .projects-page {
+      --project-navy: #0b1d31;
+      --project-gold: #c5a477;
+      --project-light: #fbf8f3;
+      --project-text: #465b70;
+    }
 
     .projects-page .page-banner {
       padding: 48px 0 42px;
@@ -25,26 +33,39 @@
     }
 
     .projects-page .projects-section {
-      padding: 32px 0 75px;
+      padding: 40px 0 75px;
     }
 
     .projects-page .projects-grid {
-      margin-top: 0;
+      display: grid;
       grid-template-columns: minmax(0, 1fr);
-      max-width: 780px;
-      margin-left: auto;
-      margin-right: auto;
+      max-width: 1350px;
+      margin: 0 auto;
     }
 
     .projects-page .project-card {
-      height: 100%;
+      background: #ffffff;
+      border: 1px solid #e7ded1;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 12px 35px rgba(11,29,49,.08);
     }
 
+    /* PROJECT HEADER */
+
     .projects-page .project-visual {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
+      display: block;
+      height: auto;
+      min-height: 0;
+      text-align: left;
+      padding: 45px 38px;
+      background: linear-gradient(
+        115deg,
+        #091a2d,
+        #10263d,
+        #1b334a
+      );
+      border-bottom: 3px solid #c5a477;
     }
 
     .projects-page .project-company {
@@ -59,21 +80,399 @@
     .projects-page .project-visual-title {
       color: #ffffff;
       font-family: 'Playfair Display', Georgia, serif;
-      font-size: 27px;
-      line-height: 1.35;
+      font-size: clamp(30px, 4vw, 46px);
+      line-height: 1.25;
+      margin-bottom: 15px;
+    }
+
+    .projects-page .project-subtitle {
+      color: #dce6ef;
+      font-size: 15px;
+      line-height: 1.7;
+      margin: 0;
     }
 
     .projects-page .project-body {
-      display: flex;
-      flex-direction: column;
+      display: block;
+      padding: 35px;
     }
 
-    .projects-page .project-coming-soon {
+    .projects-page .completed-status {
+      display: inline-block;
+      background: #e8f3ec;
+      color: #276749;
+      padding: 7px 13px;
+      border-radius: 5px;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 1px;
+    }
+
+    .projects-page .project-body p {
+      line-height: 1.8;
+      color: #465b70;
+    }
+
+    .projects-page .project-section-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      color: #0b1d31;
+      font-size: 27px;
+      margin: 0 0 15px;
+    }
+
+    .projects-page .project-block {
+      margin-top: 40px;
+      padding-top: 30px;
+      border-top: 1px solid #e7ded1;
+    }
+
+    /* KPI CARDS */
+
+    .projects-page .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 15px;
+      margin: 28px 0;
+    }
+
+    .projects-page .kpi-card {
+      background: #fbf8f3;
+      border: 1px solid #e7ded1;
+      border-top: 3px solid #c5a477;
+      border-radius: 9px;
+      padding: 24px 12px;
+      text-align: center;
+    }
+
+    .projects-page .kpi-value {
+      display: block;
+      color: #0b1d31;
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(24px, 3vw, 34px);
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .projects-page .kpi-label {
+      color: #465b70;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    /* BUTTONS */
+
+    .projects-page .project-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .projects-page .project-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 20px;
+      border-radius: 7px;
+      font-size: 13px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: transform .2s ease,
+                  background .2s ease;
+    }
+
+    .projects-page .project-link:hover {
+      transform: translateY(-2px);
+    }
+
+    .projects-page .project-link-primary {
+      background: #0b1d31;
+      color: #ffffff;
+      border: 1px solid #0b1d31;
+    }
+
+    .projects-page .project-link-primary:hover {
+      background: #1b334a;
+    }
+
+    .projects-page .project-link-gold {
+      background: #e9cda2;
+      color: #0b1d31;
+      border: 1px solid #e9cda2;
+    }
+
+    .projects-page .project-link-outline {
+      background: transparent;
+      color: #0b1d31;
+      border: 1px solid #c5a477;
+    }
+
+    /* LIVE TABLEAU DASHBOARD */
+
+    .projects-page .dashboard-container {
+      width: 100%;
+      overflow-x: auto;
+      border: 1px solid #e7ded1;
+      border-radius: 10px;
+      background: #ffffff;
+      margin-top: 20px;
+    }
+
+    .projects-page .dashboard-container iframe {
+      display: block;
+      width: 100%;
+      min-width: 1000px;
+      height: 880px;
+      border: none;
+    }
+
+    .projects-page .dashboard-note {
+      font-size: 12px;
+      color: #687b8d;
+      margin-top: 12px;
+    }
+
+    /* PROJECT COMPONENTS */
+
+    .projects-page .component-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+      margin-top: 22px;
+    }
+
+    .projects-page .component-card {
+      display: flex;
+      flex-direction: column;
+      background: #fbf8f3;
+      border: 1px solid #e7ded1;
+      border-radius: 10px;
+      padding: 25px;
+    }
+
+    .projects-page .component-number {
+      color: #a77e4c;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      margin-bottom: 12px;
+    }
+
+    .projects-page .component-card h4 {
+      font-family: 'Playfair Display', Georgia, serif;
+      color: #0b1d31;
+      font-size: 22px;
+      margin: 0 0 12px;
+    }
+
+    .projects-page .component-card p {
+      font-size: 14px;
+      margin-bottom: 15px;
+    }
+
+    .projects-page .component-card ul {
+      padding-left: 20px;
+      color: #465b70;
+      font-size: 14px;
+      line-height: 1.9;
+      margin-bottom: 20px;
+    }
+
+    .projects-page .component-card .project-link {
+      align-self: flex-start;
       margin-top: auto;
-      padding-top: 20px;
+    }
+
+    /* MACHINE LEARNING */
+
+    .projects-page .ml-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 15px;
+      margin: 25px 0;
+    }
+
+    .projects-page .ml-card {
+      background: #0b1d31;
+      color: #ffffff;
+      padding: 25px 15px;
+      border-radius: 9px;
+      text-align: center;
+    }
+
+    .projects-page .ml-value {
+      display: block;
+      color: #e9cda2;
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 32px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .projects-page .ml-label {
+      color: #dce6ef;
+      font-size: 13px;
+    }
+
+    .projects-page .table-wrapper {
+      overflow-x: auto;
+      margin-top: 22px;
+    }
+
+    .projects-page .model-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+
+    .projects-page .model-table th {
+      background: #0b1d31;
+      color: #ffffff;
+      text-align: left;
+      padding: 15px;
+    }
+
+    .projects-page .model-table td {
+      padding: 15px;
+      border-bottom: 1px solid #e7ded1;
+      color: #465b70;
+    }
+
+    .projects-page .model-table tr:nth-child(even) {
+      background: #fbf8f3;
+    }
+
+    /* VISUALIZATIONS */
+
+    .projects-page .visualization-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+      margin-top: 25px;
+    }
+
+    .projects-page .visualization-card {
+      background: #ffffff;
+      border: 1px solid #e7ded1;
+      border-radius: 9px;
+      padding: 18px;
+      overflow: hidden;
+    }
+
+    .projects-page .visualization-card h4 {
+      color: #0b1d31;
+      font-size: 15px;
+      margin-bottom: 15px;
+    }
+
+    .projects-page .visualization-card img {
+      display: block;
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
+
+    /* BUSINESS INSIGHTS */
+
+    .projects-page .insights-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+      margin-top: 22px;
+    }
+
+    .projects-page .insight-card {
+      padding: 24px;
+      border-left: 3px solid #c5a477;
+      background: #fbf8f3;
+      border-radius: 5px;
+    }
+
+    .projects-page .insight-card h4 {
+      color: #0b1d31;
+      font-size: 18px;
+      margin: 0 0 12px;
+    }
+
+    .projects-page .insight-card p {
+      font-size: 14px;
+      margin: 0;
+    }
+
+    /* STORE SALES BARS */
+
+    .projects-page .store-row {
+      margin: 17px 0;
+    }
+
+    .projects-page .store-label {
+      display: flex;
+      justify-content: space-between;
+      color: #0b1d31;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 7px;
+    }
+
+    .projects-page .store-track {
+      height: 12px;
+      background: #e7ded1;
+      border-radius: 6px;
+      overflow: hidden;
+    }
+
+    .projects-page .store-fill {
+      height: 100%;
+      background: #b18b59;
+      border-radius: 6px;
+    }
+
+    /* SKILLS */
+
+    .projects-page .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin-top: 20px;
+    }
+
+    .projects-page .project-tags span {
+      background: #fbf8f3;
+      border: 1px solid #e7ded1;
+      color: #0b1d31;
+      border-radius: 5px;
+      padding: 8px 12px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .projects-page .project-disclaimer {
+      font-size: 12px;
+      color: #687b8d;
+      line-height: 1.7;
+      margin-top: 30px;
+    }
+
+    /* RESPONSIVE DESIGN */
+
+    @media (max-width: 850px) {
+
+      .projects-page .kpi-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .projects-page .project-body {
+        padding: 25px;
+      }
+
+      .projects-page .project-visual {
+        padding: 35px 25px;
+      }
+
     }
 
     @media (max-width: 600px) {
+
       .projects-page .page-banner {
         padding: 38px 0 32px;
       }
@@ -81,13 +480,36 @@
       .projects-page .projects-section {
         padding: 24px 0 55px;
       }
+
+      .projects-page .project-body {
+        padding: 20px;
+      }
+
+      .projects-page .component-grid,
+      .projects-page .visualization-grid,
+      .projects-page .insights-grid,
+      .projects-page .ml-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .projects-page .project-link {
+        width: 100%;
+        box-sizing: border-box;
+      }
+
+      .projects-page .project-section-title {
+        font-size: 24px;
+      }
+
     }
+
   </style>
 </head>
 
 <body class="projects-page">
 
   <!-- NAVIGATION -->
+
   <header class="header">
     <nav class="navbar container">
 
@@ -116,7 +538,8 @@
 
   <main>
 
-    <!-- ONE MAIN HEADING -->
+    <!-- PAGE HEADING -->
+
     <section class="page-banner">
       <div class="container">
 
@@ -125,101 +548,858 @@
         </h1>
 
         <p>
-          Applying data analytics to real-world business
-          challenges through data preparation, exploration,
-          visualization, and actionable insights.
+          Transforming complex data into meaningful business
+          insights through analytics, business intelligence,
+          predictive modeling and data-driven strategy.
         </p>
 
       </div>
     </section>
 
     <!-- WALMART PROJECT -->
+
     <section class="section projects-section">
+
       <div class="container">
 
         <div class="projects-grid">
 
           <article class="project-card">
 
-            <div class="project-visual">
-              <div>
-                <p class="project-company">Walmart</p>
+            <!-- PROJECT HEADER -->
 
-                <h3 class="project-visual-title">
-                  Retail Sales<br>
-                  Performance Analytics
-                </h3>
-              </div>
+            <div class="project-visual">
+
+              <p class="project-company">
+                01 / Featured Project / Retail Analytics
+              </p>
+
+              <h2 class="project-visual-title">
+                Walmart Enterprise<br>
+                Sales Analytics
+              </h2>
+
+              <p class="project-subtitle">
+                End-to-End Data Analytics |
+                Business Intelligence |
+                Machine Learning
+              </p>
+
             </div>
 
             <div class="project-body">
 
               <div class="project-meta">
-                <span class="project-status">
-                  IN PROGRESS
+
+                <span class="completed-status">
+                  COMPLETED
                 </span>
 
                 <span class="project-index">
-                  01 / RETAIL ANALYTICS
+                  INDEPENDENT CASE STUDY
                 </span>
+
               </div>
 
-              <h3>
-                Walmart Sales Performance Analysis
-              </h3>
+              <!-- OVERVIEW -->
+
+              <h2 class="project-section-title">
+                Project Overview
+              </h2>
 
               <p>
-                An independent, end-to-end analytics case
-                study using over 421,000 historical Walmart
-                store-department sales records. The project
-                focuses on data quality, retail performance,
-                seasonal patterns, and business insights.
+                A comprehensive end-to-end retail analytics
+                project analyzing Walmart's historical sales
+                data from 2010 to 2012. The project combines
+                Advanced Excel, SQL, Python, Machine Learning
+                and Tableau to evaluate retail performance,
+                identify seasonal patterns, predict sales
+                and communicate actionable business insights.
               </p>
 
-              <h4>Project Objectives</h4>
+              <!-- EXECUTIVE KPIs -->
 
-              <ul class="project-points">
-                <li>
-                  Prepare and validate historical sales data
-                  using Excel Power Query.
-                </li>
-                <li>
-                  Analyze store and department performance
-                  using SQL.
-                </li>
-                <li>
-                  Explore seasonal trends and holiday sales
-                  patterns using Python.
-                </li>
-                <li>
-                  Develop an interactive Tableau dashboard.
-                </li>
-                <li>
-                  Present data-driven business recommendations.
-                </li>
-              </ul>
+              <div class="kpi-grid">
 
-              <div class="project-tags">
-                <span>Excel</span>
-                <span>SQL</span>
-                <span>Python</span>
-                <span>Tableau</span>
+                <div class="kpi-card">
+                  <span class="kpi-value">$6.74B</span>
+                  <span class="kpi-label">Total Sales</span>
+                </div>
+
+                <div class="kpi-card">
+                  <span class="kpi-value">421,570</span>
+                  <span class="kpi-label">Sales Records</span>
+                </div>
+
+                <div class="kpi-card">
+                  <span class="kpi-value">45</span>
+                  <span class="kpi-label">Retail Stores</span>
+                </div>
+
+                <div class="kpi-card">
+                  <span class="kpi-value">81</span>
+                  <span class="kpi-label">Unique Departments</span>
+                </div>
+
               </div>
 
-              <p class="project-coming-soon">
-                Independent Case Study · Currently in Development
-              </p>
+              <div class="project-actions">
+
+                <a class="project-link project-link-primary"
+                   href="https://github.com/haripriyapotu/walmart-sales-analytics"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                  View Complete GitHub Project ↗
+                </a>
+
+                <a class="project-link project-link-gold"
+                   href="#walmart-dashboard">
+                  Explore Interactive Dashboard ↓
+                </a>
+
+              </div>
+
+              <!-- BUSINESS OBJECTIVES -->
+
+              <div class="project-block">
+
+                <h2 class="project-section-title">
+                  Business Objectives
+                </h2>
+
+                <ul class="project-points">
+
+                  <li>
+                    Evaluate sales performance across stores
+                    and departments.
+                  </li>
+
+                  <li>
+                    Identify seasonal trends and holiday
+                    sales patterns.
+                  </li>
+
+                  <li>
+                    Explore economic and business factors
+                    influencing retail sales.
+                  </li>
+
+                  <li>
+                    Develop predictive models using
+                    historical sales data.
+                  </li>
+
+                  <li>
+                    Communicate business insights through
+                    interactive executive reporting.
+                  </li>
+
+                </ul>
+
+              </div>
+
+              <!-- LIVE TABLEAU DASHBOARD -->
+
+              <div class="project-block"
+                   id="walmart-dashboard">
+
+                <h2 class="project-section-title">
+                  Live Interactive Tableau Dashboard
+                </h2>
+
+                <p>
+                  Explore historical retail sales performance
+                  through dynamic KPIs, monthly sales trends,
+                  store type comparisons, department rankings
+                  and holiday sales analysis.
+                  Use the available filters to interact
+                  directly with the dashboard.
+                </p>
+
+                <div class="project-actions">
+
+                  <a class="project-link project-link-primary"
+                     href="https://public.tableau.com/views/WalmartEnterpriseSalesAnalytics/WalmartExecutiveDashboard?:showVizHome=no"
+                     target="_blank"
+                     rel="noopener noreferrer">
+                    Open Full Dashboard in Tableau ↗
+                  </a>
+
+                </div>
+
+                <div class="dashboard-container">
+
+                  <iframe
+                    title="Walmart Executive Sales Analytics Dashboard"
+                    src="https://public.tableau.com/views/WalmartEnterpriseSalesAnalytics/WalmartExecutiveDashboard?:embed=yes&amp;:showVizHome=no&amp;:toolbar=yes"
+                    loading="lazy"
+                    allowfullscreen>
+                  </iframe>
+
+                </div>
+
+                <p class="dashboard-note">
+                  Live dashboard powered by Tableau Public.
+                  Use the year, store type and holiday filters
+                  to explore the data. On smaller screens,
+                  scroll horizontally or open the full dashboard.
+                </p>
+
+              </div>
+
+              <!-- PROJECT COMPONENTS -->
+
+              <div class="project-block">
+
+                <h2 class="project-section-title">
+                  End-to-End Analytical Workflow
+                </h2>
+
+                <p>
+                  From raw data preparation to predictive
+                  analytics and executive reporting, each
+                  stage addresses a different business
+                  and analytical requirement.
+                </p>
+
+                <div class="component-grid">
+
+                  <!-- EXCEL -->
+
+                  <div class="component-card">
+
+                    <span class="component-number">
+                      PHASE 01
+                    </span>
+
+                    <h4>Advanced Excel Analytics</h4>
+
+                    <p>
+                      Prepared and analyzed historical
+                      retail data to evaluate business
+                      performance and establish key metrics.
+                    </p>
+
+                    <ul>
+                      <li>Data cleaning and validation</li>
+                      <li>Power Query</li>
+                      <li>Pivot tables and aggregations</li>
+                      <li>KPI calculations</li>
+                      <li>Excel dashboard reporting</li>
+                    </ul>
+
+                    <a class="project-link project-link-outline"
+                       href="https://github.com/haripriyapotu/walmart-sales-analytics/tree/main/excel"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                      View Excel Analysis ↗
+                    </a>
+
+                  </div>
+
+                  <!-- SQL -->
+
+                  <div class="component-card">
+
+                    <span class="component-number">
+                      PHASE 02
+                    </span>
+
+                    <h4>Advanced SQL Analytics</h4>
+
+                    <p>
+                      Applied SQL to investigate retail
+                      performance, business drivers and
+                      historical sales patterns.
+                    </p>
+
+                    <ul>
+                      <li>Sales performance analysis</li>
+                      <li>Store and department comparisons</li>
+                      <li>Advanced aggregations</li>
+                      <li>Holiday sales analysis</li>
+                      <li>Business driver analysis</li>
+                    </ul>
+
+                    <a class="project-link project-link-outline"
+                       href="https://github.com/haripriyapotu/walmart-sales-analytics/tree/main/sql"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                      View SQL Scripts ↗
+                    </a>
+
+                  </div>
+
+                  <!-- PYTHON -->
+
+                  <div class="component-card">
+
+                    <span class="component-number">
+                      PHASE 03
+                    </span>
+
+                    <h4>Python Data Analytics</h4>
+
+                    <p>
+                      Conducted exploratory data analysis
+                      to identify patterns, trends and
+                      relationships within retail sales data.
+                    </p>
+
+                    <ul>
+                      <li>Data preprocessing</li>
+                      <li>Pandas and NumPy</li>
+                      <li>Exploratory data analysis</li>
+                      <li>Statistical exploration</li>
+                      <li>Data visualization</li>
+                    </ul>
+
+                    <a class="project-link project-link-outline"
+                       href="https://github.com/haripriyapotu/walmart-sales-analytics/blob/main/04_walmart_python_analysis.ipynb"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                      View Python Notebook ↗
+                    </a>
+
+                  </div>
+
+                  <!-- MACHINE LEARNING -->
+
+                  <div class="component-card">
+
+                    <span class="component-number">
+                      PHASE 04
+                    </span>
+
+                    <h4>Machine Learning</h4>
+
+                    <p>
+                      Developed a Random Forest regression
+                      model and evaluated its performance
+                      against a baseline model.
+                    </p>
+
+                    <ul>
+                      <li>Feature preparation</li>
+                      <li>Random Forest regression</li>
+                      <li>Model performance evaluation</li>
+                      <li>Feature importance analysis</li>
+                      <li>Sales prediction</li>
+                    </ul>
+
+                    <a class="project-link project-link-outline"
+                       href="https://github.com/haripriyapotu/walmart-sales-analytics/tree/main/results"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                      View Model Results ↗
+                    </a>
+
+                  </div>
+
+                  <!-- TABLEAU -->
+
+                  <div class="component-card">
+
+                    <span class="component-number">
+                      PHASE 05
+                    </span>
+
+                    <h4>Tableau Business Intelligence</h4>
+
+                    <p>
+                      Developed an interactive executive
+                      dashboard to communicate key retail
+                      performance indicators.
+                    </p>
+
+                    <ul>
+                      <li>Executive KPI reporting</li>
+                      <li>Monthly sales trends</li>
+                      <li>Store type comparisons</li>
+                      <li>Department performance</li>
+                      <li>Interactive dashboard filters</li>
+                    </ul>
+
+                    <a class="project-link project-link-outline"
+                       href="https://public.tableau.com/views/WalmartEnterpriseSalesAnalytics/WalmartExecutiveDashboard?:showVizHome=no"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                      View Tableau Dashboard ↗
+                    </a>
+
+                  </div>
+
+                  <!-- BUSINESS STRATEGY -->
+
+                  <div class="component-card">
+
+                    <span class="component-number">
+                      PHASE 06
+                    </span>
+
+                    <h4>Business Insights & Strategy</h4>
+
+                    <p>
+                      Translated analytical findings into
+                      practical recommendations for retail
+                      business decision-making.
+                    </p>
+
+                    <ul>
+                      <li>Inventory planning</li>
+                      <li>Holiday demand preparation</li>
+                      <li>Store performance optimization</li>
+                      <li>Department-level strategy</li>
+                      <li>Predictive decision support</li>
+                    </ul>
+
+                    <a class="project-link project-link-outline"
+                       href="https://github.com/haripriyapotu/walmart-sales-analytics#key-business-findings"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                      View Business Findings ↗
+                    </a>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+              <!-- MACHINE LEARNING RESULTS -->
+
+              <div class="project-block">
+
+                <h2 class="project-section-title">
+                  Predictive Analytics & Model Performance
+                </h2>
+
+                <p>
+                  The Random Forest regression model
+                  demonstrated improved predictive
+                  performance compared with the baseline,
+                  highlighting the potential of machine
+                  learning in retail demand planning.
+                </p>
+
+                <div class="ml-grid">
+
+                  <div class="ml-card">
+                    <span class="ml-value">0.9651</span>
+                    <span class="ml-label">R² Score</span>
+                  </div>
+
+                  <div class="ml-card">
+                    <span class="ml-value">15.75%</span>
+                    <span class="ml-label">MAE Reduction</span>
+                  </div>
+
+                  <div class="ml-card">
+                    <span class="ml-value">19.25%</span>
+                    <span class="ml-label">RMSE Reduction</span>
+                  </div>
+
+                </div>
+
+                <div class="table-wrapper">
+
+                  <table class="model-table">
+
+                    <thead>
+                      <tr>
+                        <th>Evaluation Metric</th>
+                        <th>Baseline Model</th>
+                        <th>Random Forest</th>
+                      </tr>
+                    </thead>
+
+                    <tbody>
+
+                      <tr>
+                        <td>Mean Absolute Error</td>
+                        <td>$2,495.09</td>
+                        <td><strong>$2,102.24</strong></td>
+                      </tr>
+
+                      <tr>
+                        <td>Root Mean Squared Error</td>
+                        <td>$5,080.62</td>
+                        <td><strong>$4,102.52</strong></td>
+                      </tr>
+
+                      <tr>
+                        <td>R² Score</td>
+                        <td>0.9465</td>
+                        <td><strong>0.9651</strong></td>
+                      </tr>
+
+                    </tbody>
+
+                  </table>
+
+                </div>
+
+                <p class="dashboard-note">
+                  R² represents the proportion of variance
+                  explained on the evaluated data, not
+                  classification accuracy. Further time-based
+                  validation is recommended before operational
+                  forecasting.
+                </p>
+
+                <!-- ML VISUALIZATIONS -->
+
+                <div class="visualization-grid">
+
+                  <div class="visualization-card">
+
+                    <h4>Model Performance Comparison</h4>
+
+                    <img
+                      src="https://raw.githubusercontent.com/haripriyapotu/walmart-sales-analytics/main/visualizations/model_comparison.png"
+                      alt="Comparison of baseline and Random Forest model performance"
+                      loading="lazy">
+
+                  </div>
+
+                  <div class="visualization-card">
+
+                    <h4>Actual vs. Predicted Sales</h4>
+
+                    <img
+                      src="https://raw.githubusercontent.com/haripriyapotu/walmart-sales-analytics/main/visualizations/actual_vs_predicted.png"
+                      alt="Actual versus predicted retail sales"
+                      loading="lazy">
+
+                  </div>
+
+                  <div class="visualization-card">
+
+                    <h4>Feature Importance Analysis</h4>
+
+                    <img
+                      src="https://raw.githubusercontent.com/haripriyapotu/walmart-sales-analytics/main/visualizations/feature_importance.png"
+                      alt="Random Forest feature importance analysis"
+                      loading="lazy">
+
+                  </div>
+
+                  <div class="visualization-card">
+
+                    <h4>Weekly Sales Forecast</h4>
+
+                    <img
+                      src="https://raw.githubusercontent.com/haripriyapotu/walmart-sales-analytics/main/visualizations/weekly_sales_forecast.png"
+                      alt="Weekly retail sales forecast"
+                      loading="lazy">
+
+                  </div>
+
+                </div>
+
+                <div class="project-actions">
+
+                  <a class="project-link project-link-primary"
+                     href="https://github.com/haripriyapotu/walmart-sales-analytics/tree/main/results"
+                     target="_blank"
+                     rel="noopener noreferrer">
+                    Explore Analytical Results ↗
+                  </a>
+
+                  <a class="project-link project-link-outline"
+                     href="https://github.com/haripriyapotu/walmart-sales-analytics/tree/main/visualizations"
+                     target="_blank"
+                     rel="noopener noreferrer">
+                    View All Visualizations ↗
+                  </a>
+
+                </div>
+
+              </div>
+
+              <!-- BUSINESS FINDINGS -->
+
+              <div class="project-block">
+
+                <h2 class="project-section-title">
+                  Key Business Findings
+                </h2>
+
+                <div class="insights-grid">
+
+                  <div class="insight-card">
+
+                    <h4>Store Type Performance</h4>
+
+                    <p>
+                      Type A stores accounted for approximately
+                      64% of total historical sales.
+                    </p>
+
+                    <div class="store-row">
+
+                      <div class="store-label">
+                        <span>Type A</span>
+                        <span>$4.33B</span>
+                      </div>
+
+                      <div class="store-track">
+                        <div class="store-fill"
+                             style="width:64.2%"></div>
+                      </div>
+
+                    </div>
+
+                    <div class="store-row">
+
+                      <div class="store-label">
+                        <span>Type B</span>
+                        <span>$2.00B</span>
+                      </div>
+
+                      <div class="store-track">
+                        <div class="store-fill"
+                             style="width:29.7%"></div>
+                      </div>
+
+                    </div>
+
+                    <div class="store-row">
+
+                      <div class="store-label">
+                        <span>Type C</span>
+                        <span>$0.41B</span>
+                      </div>
+
+                      <div class="store-track">
+                        <div class="store-fill"
+                             style="width:6.1%"></div>
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                  <div class="insight-card">
+
+                    <h4>Holiday Sales Impact</h4>
+
+                    <span class="kpi-value">+7.1%</span>
+
+                    <p>
+                      Average weekly sales per
+                      store-department record were
+                      approximately 7.1% higher during
+                      holiday periods.
+                    </p>
+
+                    <br>
+
+                    <p>
+                      <strong>Holiday:</strong> $17,035.82
+                    </p>
+
+                    <p>
+                      <strong>Non-Holiday:</strong> $15,901.45
+                    </p>
+
+                  </div>
+
+                  <div class="insight-card">
+
+                    <h4>Predictive Performance</h4>
+
+                    <p>
+                      Random Forest reduced mean absolute
+                      prediction error by approximately
+                      15.75% compared with the baseline
+                      model, demonstrating improved
+                      predictive performance.
+                    </p>
+
+                  </div>
+
+                  <div class="insight-card">
+
+                    <h4>Retail Business Opportunities</h4>
+
+                    <p>
+                      Store-level, department-level and
+                      seasonal sales patterns provide
+                      opportunities to improve inventory
+                      planning, resource allocation and
+                      retail performance strategies.
+                    </p>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+              <!-- RECOMMENDATIONS -->
+
+              <div class="project-block">
+
+                <h2 class="project-section-title">
+                  Strategic Business Recommendations
+                </h2>
+
+                <div class="insights-grid">
+
+                  <div class="insight-card">
+
+                    <h4>Inventory Optimization</h4>
+
+                    <p>
+                      Use historical sales trends and
+                      validated predictive models to
+                      support inventory planning and
+                      reduce potential stock shortages.
+                    </p>
+
+                  </div>
+
+                  <div class="insight-card">
+
+                    <h4>Holiday Demand Planning</h4>
+
+                    <p>
+                      Prepare inventory, staffing and
+                      promotional strategies ahead of
+                      anticipated high-demand holiday
+                      periods.
+                    </p>
+
+                  </div>
+
+                  <div class="insight-card">
+
+                    <h4>Store-Specific Strategies</h4>
+
+                    <p>
+                      Evaluate store characteristics,
+                      sales contribution and operational
+                      efficiency to develop targeted
+                      business strategies.
+                    </p>
+
+                  </div>
+
+                  <div class="insight-card">
+
+                    <h4>Department-Level Growth</h4>
+
+                    <p>
+                      Evaluate high-performing and
+                      underperforming departments to
+                      identify potential growth and
+                      resource allocation opportunities.
+                    </p>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+              <!-- SKILLS -->
+
+              <div class="project-block">
+
+                <h2 class="project-section-title">
+                  Technologies & Skills Demonstrated
+                </h2>
+
+                <div class="project-tags">
+
+                  <span>Advanced Excel</span>
+                  <span>Power Query</span>
+                  <span>MySQL</span>
+                  <span>Advanced SQL</span>
+                  <span>Python</span>
+                  <span>Pandas</span>
+                  <span>NumPy</span>
+                  <span>Matplotlib</span>
+                  <span>Scikit-learn</span>
+                  <span>Random Forest</span>
+                  <span>Machine Learning</span>
+                  <span>Predictive Analytics</span>
+                  <span>Data Cleaning</span>
+                  <span>Data Validation</span>
+                  <span>Exploratory Data Analysis</span>
+                  <span>Tableau</span>
+                  <span>Business Intelligence</span>
+                  <span>KPI Reporting</span>
+                  <span>Data Visualization</span>
+                  <span>Business Strategy</span>
+                  <span>GitHub</span>
+
+                </div>
+
+              </div>
+
+              <!-- COMPLETE PROJECT -->
+
+              <div class="project-block">
+
+                <h2 class="project-section-title">
+                  Explore the Complete Project
+                </h2>
+
+                <p>
+                  Access the complete project repository,
+                  including source data, Excel analysis,
+                  SQL scripts, Python notebook, machine
+                  learning results, visualizations and
+                  technical documentation.
+                </p>
+
+                <div class="project-actions">
+
+                  <a class="project-link project-link-primary"
+                     href="https://github.com/haripriyapotu/walmart-sales-analytics"
+                     target="_blank"
+                     rel="noopener noreferrer">
+                    Complete GitHub Repository ↗
+                  </a>
+
+                  <a class="project-link project-link-gold"
+                     href="https://public.tableau.com/views/WalmartEnterpriseSalesAnalytics/WalmartExecutiveDashboard?:showVizHome=no"
+                     target="_blank"
+                     rel="noopener noreferrer">
+                    Live Tableau Dashboard ↗
+                  </a>
+
+                </div>
+
+                <p class="project-disclaimer">
+                  Independent portfolio case study using
+                  historical Walmart sales data from
+                  2010–2012. This project is intended
+                  for educational and professional
+                  demonstration purposes and is not
+                  affiliated with Walmart. Business
+                  recommendations are analytical proposals,
+                  not measured operational outcomes.
+                </p>
+
+              </div>
 
             </div>
+
           </article>
 
         </div>
 
       </div>
+
     </section>
 
     <!-- NEXT PAGE -->
+
     <section class="page-cta">
+
       <div class="container">
 
         <h2>
@@ -236,12 +1416,15 @@
         </a>
 
       </div>
+
     </section>
 
   </main>
 
   <!-- FOOTER -->
+
   <footer>
+
     <div class="container footer-content">
 
       <p>
@@ -254,6 +1437,7 @@
       </p>
 
     </div>
+
   </footer>
 
   <script src="script.js"></script>
