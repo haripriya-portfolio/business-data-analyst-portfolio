@@ -1,0 +1,367 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | Hari Priya Potu</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .project-gallery {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 70px 25px;
+            font-family: Arial, sans-serif;
+        }
+
+        .gallery-heading {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .gallery-heading h1 {
+            font-size: 42px;
+            color: #10243a;
+            margin-bottom: 15px;
+        }
+
+        .gallery-heading h1 span {
+            color: #b08d57;
+        }
+
+        .gallery-heading p {
+            color: #64748b;
+            font-size: 17px;
+            line-height: 1.7;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(340px, 100%), 1fr));
+            gap: 30px;
+            align-items: start;
+        }
+
+        .portfolio-project-card {
+            background: #ffffff;
+            border: 1px solid #e5e7eb;
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.07);
+            transition: transform 0.3s, box-shadow 0.3s;
+            max-width: 570px;
+        }
+
+        .portfolio-project-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+        }
+
+        .project-banner {
+            background: linear-gradient(135deg, #0b1d31, #234767);
+            padding: 35px 25px;
+            color: white;
+        }
+
+        .project-banner small {
+            color: #dfc394;
+            letter-spacing: 2px;
+            font-size: 12px;
+        }
+
+        .project-banner h2 {
+            font-size: 28px;
+            line-height: 1.4;
+            color: white;
+            margin: 15px 0;
+        }
+
+        .project-banner p {
+            color: #d4deea;
+            font-size: 14px;
+        }
+
+        .project-content {
+            padding: 25px;
+        }
+
+        .project-status {
+            display: inline-block;
+            color: #166534;
+            background: #dcfce7;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .project-description {
+            color: #475569;
+            line-height: 1.8;
+            font-size: 15px;
+            margin: 20px 0;
+        }
+
+        .project-metrics {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin: 20px 0;
+        }
+
+        .project-metric {
+            background: #f5f7fa;
+            border-radius: 8px;
+            padding: 16px 8px;
+            text-align: center;
+        }
+
+        .project-metric strong {
+            display: block;
+            color: #10243a;
+            font-size: 23px;
+            margin-bottom: 6px;
+        }
+
+        .project-metric span {
+            color: #64748b;
+            font-size: 12px;
+        }
+
+        .project-tools {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 22px 0;
+        }
+
+        .project-tools span {
+            background: #f7f2e9;
+            color: #806039;
+            padding: 7px 11px;
+            border-radius: 5px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .project-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 25px;
+        }
+
+        .project-primary,
+        .project-secondary {
+            display: inline-block;
+            padding: 12px 18px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            text-align: center;
+            flex: 1;
+        }
+
+        .project-primary {
+            background: #10243a;
+            color: #ffffff;
+        }
+
+        .project-secondary {
+            border: 1px solid #10243a;
+            color: #10243a;
+        }
+
+        .project-primary:hover {
+            background: #b08d57;
+            color: white;
+        }
+
+        .project-secondary:hover {
+            background: #f1f5f9;
+        }
+
+        .gallery-footer {
+            text-align: center;
+            margin-top: 50px;
+            color: #64748b;
+            font-size: 14px;
+        }
+
+        .gallery-navigation {
+            background: #0b1d31;
+            padding: 22px 6%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .gallery-brand {
+            color: #ffffff;
+            font-size: 23px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .gallery-brand span {
+            color: #dfc394;
+        }
+
+        .gallery-nav-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .gallery-nav-links a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .gallery-nav-links a:hover,
+        .gallery-nav-links .current-page {
+            color: #dfc394;
+        }
+
+        @media (max-width: 600px) {
+            .project-gallery {
+                padding: 40px 16px;
+            }
+
+            .gallery-heading h1 {
+                font-size: 32px;
+            }
+
+            .project-banner h2 {
+                font-size: 24px;
+            }
+
+            .gallery-nav-links {
+                gap: 12px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="gallery-navigation">
+        <a href="index.html" class="gallery-brand">
+            Hari Priya<span>.</span>
+        </a>
+
+        <div class="gallery-nav-links">
+            <a href="index.html">Home</a>
+            <a href="projects.html" class="current-page">Projects</a>
+        </div>
+    </nav>
+
+    <main class="project-gallery">
+
+        <div class="gallery-heading">
+            <h1>Featured <span>Projects.</span></h1>
+            <p>
+                Transforming complex data into actionable business insights
+                through analytics, visualization, and predictive modeling.
+            </p>
+        </div>
+
+        <div class="projects-grid">
+
+            <!-- PROJECT 1: WALMART -->
+
+            <article class="portfolio-project-card">
+
+                <div class="project-banner">
+                    <small>01 / RETAIL & BUSINESS ANALYTICS</small>
+
+                    <h2>Walmart Enterprise Sales Analytics</h2>
+
+                    <p>End-to-End Business Intelligence & Predictive Analytics</p>
+                </div>
+
+                <div class="project-content">
+
+                    <span class="project-status">COMPLETED</span>
+
+                    <p class="project-description">
+                        An end-to-end retail analytics case study analyzing
+                        historical Walmart sales to identify revenue trends,
+                        store performance, departmental contributions,
+                        holiday impacts, and predictive sales patterns.
+                    </p>
+
+                    <div class="project-metrics">
+
+                        <div class="project-metric">
+                            <strong>$6.74B</strong>
+                            <span>Total Sales Analyzed</span>
+                        </div>
+
+                        <div class="project-metric">
+                            <strong>421,570</strong>
+                            <span>Sales Records</span>
+                        </div>
+
+                        <div class="project-metric">
+                            <strong>45</strong>
+                            <span>Retail Stores</span>
+                        </div>
+
+                        <div class="project-metric">
+                            <strong>81</strong>
+                            <span>Departments</span>
+                        </div>
+
+                    </div>
+
+                    <div class="project-tools">
+                        <span>Advanced Excel</span>
+                        <span>SQL</span>
+                        <span>Python</span>
+                        <span>Tableau</span>
+                        <span>Machine Learning</span>
+                        <span>Business Intelligence</span>
+                    </div>
+
+                    <div class="project-actions">
+
+                        <a href="walmart.html" class="project-primary">
+                            View Full Project &rarr;
+                        </a>
+
+                        <a href="https://github.com/haripriyapotu/walmart-sales-analytics"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           class="project-secondary">
+                            GitHub Repository
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+            <!-- ADD FUTURE PROJECT CARDS HERE -->
+
+        </div>
+
+        <div class="gallery-footer">
+            More analytics and business intelligence projects coming soon.
+        </div>
+
+    </main>
+
+    <footer style="text-align:center; padding:25px; background:#0b1d31; color:#ffffff;">
+        &copy; Hari Priya Potu | Data & Business Analytics Portfolio
+    </footer>
+
+</body>
+</html>
